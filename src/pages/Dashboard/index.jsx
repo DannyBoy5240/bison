@@ -158,19 +158,19 @@ const Dashboard = () => {
     const imageUrl = [
       [
         "/img/menuImages/twitter-black.webp.png",
-        "/https://twitter.com/bison_labs",
+        "https://twitter.com/bison_labs",
       ],
       [
         "/img/menuImages/discord-black.webp.png",
-        "/https://discord.gg/NcyRQ6esdR",
+        "https://discord.gg/NcyRQ6esdR",
       ],
       [
         "/img/menuImages/github-black.webp.png",
-        "/https://dmaster-1.gitbook.io/bisonlabs/",
+        "https://dmaster-1.gitbook.io/bisonlabs/",
       ],
       [
         "/img/menuImages/telegram-black.webp.png",
-        "/https://t.me/+a5g-srOWtthkNGI5",
+        "https://t.me/+a5g-srOWtthkNGI5",
       ],
       ["/img/menuImages/forum-black.webp.png", "/"],
       ["/img/menuImages/reddit-black.webp.png", "/"],
