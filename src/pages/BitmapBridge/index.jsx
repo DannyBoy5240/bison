@@ -33,7 +33,7 @@ const BitmapBridge = () => {
           const htmlContent = await response.text();
 
           // 使用正则表达式从HTML中提取location信息
-          const locationMatch = htmlContent.match(/<dt>location<\/dt>\s+<dd class=monospace>([^<]+)<\/dd>/);
+          const locationMatch = htmlContent.match(/<dt>location<\/dt>\s+<dd className=monospace>([^<]+)<\/dd>/);
           const location = locationMatch ? locationMatch[1] : null;
 
           // 使用正则表达式从HTML中提取output value信息

@@ -8,7 +8,7 @@ const navigation = [
   { name: "Bridge", href: "/bridge" },
   { name: "Developers", href: "https://dmaster-1.gitbook.io/bisonlabs/" },
   { name: "About", href: "https://linktr.ee/bisonlabs" },
-  { name: "LABB Token Claim(COMING SOON)", href: "/claim" },
+  // { name: "LABB Token Claim(COMING SOON)", href: "/claim" },
 ];
 
 export default function Header() {
@@ -42,7 +42,7 @@ export default function Header() {
 
   return (
     <div className="bg-white">
-      <div className="py-4 mx-auto bg-amber-500  w-full h-auto ">
+      <div className="py-2 mx-auto bg-amber-500  w-full h-auto ">
         <span className="max-w-screen-md flex flex-wrap grid gap-3 lg:grid-cols-3 sm:grid-cols-1 items-center justify-around text-center mx-auto">
           <span className="text-xl font-bold">ANNOUNCEMENT</span>
           <span>LABB Claim COMING SOON!</span>
@@ -71,7 +71,7 @@ export default function Header() {
           <div className="flex lg:hidden">
             <button
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white hover:text-amber-500"
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
@@ -84,7 +84,7 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-xs font-sans leading-6 text-white"
+                className="text-lg font-sans leading-6 text-white hover:text-amber-500"
                 target={(item.name !== "Bridge" && item.name !=="LABB Token Claim(COMING SOON)") ? "_blank" : "_self"}
               >
                 <div className="font-medium">{item.name}</div>
@@ -92,7 +92,7 @@ export default function Header() {
             ))}
           </div>
 
-          <div className="hidden lg:flex lg:justify-end ml-10">
+          {/* <div className="hidden lg:flex lg:justify-end ml-10">
             <button
               onClick={() => setModalOpen(true)}
               className="bg-amber-500 font-sans text-black rounded-full py-1 w-28 font-bold"
@@ -100,7 +100,7 @@ export default function Header() {
             >
               Connect
             </button>
-          </div>
+          </div> */}
         </nav>
 
         <Dialog
@@ -110,7 +110,7 @@ export default function Header() {
           onClose={setMobileMenuOpen}
         >
           <div className="fixed inset-0 z-50" />
-          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-amber-300 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <a
                 href="/"
@@ -135,13 +135,13 @@ export default function Header() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-amber-500"
                     >
                       {item.name}
                     </a>
                   ))}
                 </div>
-                <div className="py-6">
+                {/* <div className="py-6">
                   <button
                     onClick={() => setModalOpen(true)}
                     className="bg-amber-500 font-sans text-black rounded-md py-4 w-48 text-lg font-bold"
@@ -149,7 +149,7 @@ export default function Header() {
                   >
                     Connect
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </Dialog.Panel>

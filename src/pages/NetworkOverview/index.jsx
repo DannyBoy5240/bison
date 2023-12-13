@@ -117,32 +117,32 @@ const NetworkOverview = () => {
           <XBox>
             <h3 className="text-center" >Next State Update In:</h3>
             <div>
-            <div class="clock">
-              <div class="flipper">
-                <div class="gear"></div>
-                <div class="gear"></div>
-                <div class="top">
+            <div className="clock">
+              <div className="flipper">
+                <div className="gear"></div>
+                <div className="gear"></div>
+                <div className="top">
                 </div>
-                <div class="bottom">
-                  <div class="text">{String(hours).padStart(2, "0")}</div>
-                </div>
-              </div>
-              <div class="flipper">
-                <div class="gear"></div>
-                <div class="gear"></div>
-                <div class="top">
-                </div>
-                <div class="bottom">
-                  <div class="text">{String(minutes).padStart(2, "0")}</div>
+                <div className="bottom">
+                  <div className="text">{String(hours).padStart(2, "0")}</div>
                 </div>
               </div>
-              <div class="flipper">
-                <div class="gear"></div>
-                <div class="gear"></div>
-                <div class="top">
+              <div className="flipper">
+                <div className="gear"></div>
+                <div className="gear"></div>
+                <div className="top">
                 </div>
-                <div class="bottom">
-                  <div class="text">{String(seconds).padStart(2, "0")}</div>
+                <div className="bottom">
+                  <div className="text">{String(minutes).padStart(2, "0")}</div>
+                </div>
+              </div>
+              <div className="flipper">
+                <div className="gear"></div>
+                <div className="gear"></div>
+                <div className="top">
+                </div>
+                <div className="bottom">
+                  <div className="text">{String(seconds).padStart(2, "0")}</div>
                 </div>
               </div>
             </div>

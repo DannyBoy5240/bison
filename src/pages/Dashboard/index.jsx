@@ -1,8 +1,13 @@
 import React from "react";
+import {useNavigate} from "react-router-dom";
 
 const Dashboard = () => {
   // Content
   const Content = () => {
+    const navigate = useNavigate();
+    const handleClickBridge = () => {
+      navigate("/bridge");
+    };
     return (
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2">
@@ -10,7 +15,7 @@ const Dashboard = () => {
             <p className="text-3xl sm:text-5xl lg:text-6xl xl:text-8xl text-white font-medium">
               BUILD
             </p>
-            <p className="text-3xl sm:text-5xl lg:text-6xl xl:text-8xl text-yellow-600 font-medium">
+            <p className="animate-bounce text-3xl sm:text-5xl lg:text-6xl xl:text-8xl text-amber-500 font-medium">
               STABLECOINS
             </p>
             <p className="text-3xl sm:text-5xl lg:text-6xl xl:text-8xl text-white font-medium">
@@ -22,19 +27,28 @@ const Dashboard = () => {
               trading.
             </p>
             <p className="text-4x1 font-bold">NO BITCOIN SOFTFORK NEEDED!</p>
-            <button className=" bg-black text-white border-2 border-solid border-white hover:bg-white hover:text-black rounded transition duration-300 ease-in-out mr-10 mt-14 w-32 py-2">
-              Read Docs
-            </button>
-            <button className=" bg-black text-white border-2 border-solid border-white hover:bg-white hover:text-black rounded transition duration-300 ease-in-out mr-10 mt-14 w-32 py-2">
+            <a href="https://dmaster-1.gitbook.io/bisonlabs/" target="_blank">
+              <button className=" bg-black text-white border-2 border-solid border-white hover:bg-white hover:text-black rounded transition duration-300 ease-in-out mr-10 mt-14 w-32 py-2">
+                Read Docs
+              </button>
+            </a>
+            <button
+              className=" bg-black text-white border-2 border-solid border-white hover:bg-white hover:text-black rounded transition duration-300 ease-in-out mr-10 mt-14 w-32 py-2"
+              onClick={handleClickBridge}
+            >
               Bridge Assets
             </button>
           </div>
-          <div className="mt-10 flex justify-center items-center">
+
+          <div className="flex justify-center items-center flex-col mt-8">
             <img
               src="/img/menuImages/art1.png"
               alt="Art1"
-              className="max-w-xs lg:max-w-md"
+              className="fadeIn max-w-xs lg:max-w-md"
             />
+            <p className="text-center text-sans text-xl pt-6">
+              BRC-20 Trading Is Now 1000x Faster
+            </p>
           </div>
         </div>
       </div>
@@ -64,28 +78,34 @@ const Dashboard = () => {
 
     return (
       <div className="container mx-auto px-4">
-        <div class="custom-line text-white"></div>
-        <div className="flex justify-center text-3xl sm:text-4xl lg:text-5xl text-white my-14">
+        <div className="custom-line text-white"></div>
+
+        <hr className="border-0 h-1 bg-gradient-to-r from-black via-gray-500 to-black m-20" />
+
+        <div className="animate-pulse flex justify-center text-3xl sm:text-4xl lg:text-5xl text-white my-14 font-bold">
           Explore Bison
         </div>
-        <div className="grid justify-center xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-10 ">
+
+        <div className="grid justify-center xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {cardImageUrls.map((image, index) => (
             <div key={image} className="flex justify-center">
-              <div className="max-w-xs p-6 bg-white border border-gray-200 rounded-lg dark:bg-black">
+              <div className=" p-6 bg-black text-white border border-gray-200 rounded-3xl dark:bg-black">
                 <div className="flex justify-center items-center">
                   <img src={image} className="max-h-12" />
                 </div>
-                <div className="flex justify-center items-center my-5 text-md font-semibold tracking-tight text-gray-900 dark:text-white">
+                <div className="flex justify-center items-center my-5 text-md font-semibold tracking-tight text-white dark:text-white">
                   {cardTitles[index]}
                 </div>
 
-                <p className="mb-3 font-light text-gray-500 dark:text-gray-400">
+                <p className="mb-3 font-light text-gray-400 dark:text-gray-400">
                   {cardContents[index]}
                 </p>
               </div>
             </div>
           ))}
         </div>
+
+        <hr className="border-0 h-1 bg-gradient-to-r from-black via-gray-500 to-black m-20" />
       </div>
     );
   };
@@ -94,7 +114,7 @@ const Dashboard = () => {
   const SecuredContent = () => {
     return (
       <div className="container mx-auto px-4">
-        <div className="flex justify-center text-3xl sm:text-4xl lg:text-5xl text-white my-14">
+        <div className="flex justify-center text-3xl sm:text-4xl lg:text-5xl text-white my-14 font-bold">
           Secured by Bitcoin
         </div>
         <div className="flex justify-center font-medium text-white mx-10 sm:mx-16 md:mx-28 lg:mx-48">
@@ -108,7 +128,7 @@ const Dashboard = () => {
           technology.
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 ">
           <div className="md:col-span-2 mt-14">
             <p className="text-1xl sm:text-2xl lg:text-3xl text-white font-medium my-14">
               On Bitcoin but 1000x Faster!
@@ -121,7 +141,7 @@ const Dashboard = () => {
             </p>
             <p className="text-4x1 font-bold">NO BITCOIN SOFTFORK NEEDED!</p>
           </div>
-          <div className="md:col-span-1  flex justify-center items-center mt-10">
+          <div className="md:col-span-1  flex justify-center items-center my-16">
             <img
               src="/img/menuImages/bitcoin1.gif"
               alt="Art1"
@@ -136,12 +156,24 @@ const Dashboard = () => {
   // Join Community
   const JoinCommunity = () => {
     const imageUrl = [
-      "/img/menuImages/twitter-black.webp.png",
-      "/img/menuImages/discord-black.webp.png",
-      "/img/menuImages/github-black.webp.png",
-      "/img/menuImages/telegram-black.webp.png",
-      "/img/menuImages/forum-black.webp.png",
-      "/img/menuImages/reddit-black.webp.png",
+      [
+        "/img/menuImages/twitter-black.webp.png",
+        "/https://twitter.com/bison_labs",
+      ],
+      [
+        "/img/menuImages/discord-black.webp.png",
+        "/https://discord.gg/NcyRQ6esdR",
+      ],
+      [
+        "/img/menuImages/github-black.webp.png",
+        "/https://dmaster-1.gitbook.io/bisonlabs/",
+      ],
+      [
+        "/img/menuImages/telegram-black.webp.png",
+        "/https://t.me/+a5g-srOWtthkNGI5",
+      ],
+      ["/img/menuImages/forum-black.webp.png", "/"],
+      ["/img/menuImages/reddit-black.webp.png", "/"],
     ];
     const title = ["X", "Discord", "Github", "Telegram", "Forum", "Reddit"];
     const content = [
@@ -153,11 +185,11 @@ const Dashboard = () => {
       "See more",
     ];
     return (
-      <div className="bg-yellow-500">
+      <div className="bg-gradient-to-r from-amber-300 to-amber-600">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-5 py-10 gap-10">
             <div className="md:col-span-3">
-              <p className="flex justify-start text-3xl sm:text-4xl lg:text-5xl text-white my-14">
+              <p className="flex justify-start text-3xl sm:text-4xl lg:text-5xl text-white font-bold my-14">
                 Join the Community
               </p>
               <p className="flex justify-start font-medium text-white my-14 ">
@@ -168,13 +200,15 @@ const Dashboard = () => {
             <div className="md:col-span-2">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                 {imageUrl.map((image, index) => (
-                  <div key={image} className="flex items-center">
+                  <div key={image[0]} className="flex items-center">
                     <div>
-                      <img src={image} className="w-10 m-3" />
+                      <a href={image[1]}>
+                        <img src={image[0]} className="w-10 m-3" />
+                      </a>
                     </div>
                     <div>
-                      <p>{title[index]}</p>
-                      <p>{content[index]}</p>
+                      <p className="font-bold text-lg">{title[index]}</p>
+                      <p className="text-gray-200">{content[index]}</p>
                     </div>
                   </div>
                 ))}
